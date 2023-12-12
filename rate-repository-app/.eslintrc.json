@@ -1,0 +1,37 @@
+{
+	"plugins": ["react", "react-native"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:react/jsx-runtime",
+		"plugin:react-hooks/recommended"
+	],
+	"ignorePatterns": ["dist", ".eslintrc.cjs"],
+	"parser": "@babel/eslint-parser",
+	"env": {
+		"react-native/react-native": true
+	},
+	"rules": {
+		"react-refresh/only-export-components": [
+			"warn",
+			{ "allowConstantExport": true }
+		],
+		"react/prop-types": 0,
+		"no-unused-vars": 0,
+		"no-console": 0,
+		"eqeqeq": "error",
+		"no-trailing-spaces": "error",
+		"object-curly-spacing": ["error", "always"],
+		"arrow-spacing": ["error", { "before": true, "after": true }],
+		"indent": ["error", 2, { "SwitchCase": 1 }],
+		"linebreak-style": ["error", "unix"],
+		"quotes": ["error", "single"],
+		"semi": ["error", "always"],
+		"react/react-in-jsx-scope": "off"
+	}
+}
