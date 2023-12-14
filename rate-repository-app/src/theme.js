@@ -5,6 +5,7 @@ const theme = {
 		textHeader: '#ffffff',
 		primary: '#0366d6',
 		header: '#24292e',
+		mainBackground: '#e1e4e8',
 	},
 	fontSizes: {
 		body: 14,

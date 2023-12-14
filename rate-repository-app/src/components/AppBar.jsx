@@ -12,6 +12,8 @@ const styles = StyleSheet.create({
 		paddingRight: 10,
 		paddingBottom: 10,
 		marginTop: 10,
+		display: 'flex',
+		flexDirection: 'row',
 	},
 	// ...
 });
@@ -19,7 +21,8 @@ const styles = StyleSheet.create({
 const AppBar = () => {
 	return (
 		<View style={styles.container}>
-			<AppBarTab>Repositories</AppBarTab>
+			<AppBarTab route={'/'}>Repositories</AppBarTab>
+			<AppBarTab route={'/signin'}>Sign In</AppBarTab>
 		</View>
 	);
 };

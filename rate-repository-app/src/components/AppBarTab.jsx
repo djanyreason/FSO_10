@@ -1,11 +1,27 @@
-import { Pressable } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
+import { Link } from 'react-router-native';
 
 import Text from './Text';
+import theme from '../theme';
 
-const AppBarTab = ({ children }) => {
+const styles = StyleSheet.create({
+	NavButton: {
+		padding: 2,
+		paddingTop: 1,
+		borderColor: 'white',
+		borderWidth: 2,
+		borderRadius: 4,
+		marginRight: 4,
+		backgroundColor: theme.colors.primary,
+	},
+});
+
+const AppBarTab = ({ route, children }) => {
 	return (
-		<Pressable>
-			<Text color='header'>{children}</Text>
+		<Pressable style={styles.NavButton}>
+			<Link to={route}>
+				<Text color='header'>{children}</Text>
+			</Link>
 		</Pressable>
 	);
 };
