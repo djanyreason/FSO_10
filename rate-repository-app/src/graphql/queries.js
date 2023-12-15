@@ -19,4 +19,13 @@ export const GET_REPOSITORIES = gql`
 	}
 `;
 
+export const CHECK_LOGIN = gql`
+	query Me {
+		me {
+			id
+			username
+		}
+	}
+`;
+
 // other queries...

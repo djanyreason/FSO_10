@@ -13,7 +13,7 @@ const createApolloClient = (authStorage) => {
 			return {
 				headers: {
 					...headers,
-					authroization: accessToken ? `Bearer ${accessToken}` : '',
+					authorization: accessToken ? `Bearer ${accessToken}` : '',
 				},
 			};
 		} catch (err) {
