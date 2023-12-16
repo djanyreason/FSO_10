@@ -1,7 +1,8 @@
-import { View, StyleSheet, ScrollView } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
 
-import AppBarTab from './AppBarTab';
+import SignedOutBar from './SignedOutBar';
+import SignedInBar from './SignedInBar';
 import theme from '../../theme';
 
 import useCheckLogin from '../../hooks/useCheckLogin';
@@ -26,13 +27,12 @@ const AppBar = () => {
 	const noLogin = !checkLogin || !checkLogin.me;
 
 	return (
-		<View style={styles.container}>
-			<ScrollView horizontal>
-				<AppBarTab route={'/'}>Repositories</AppBarTab>
-				<AppBarTab route={noLogin ? '/signin' : '/logout'}>
-					{noLogin ? 'Sign In' : 'Sign Out'}
-				</AppBarTab>
-			</ScrollView>
+		<View>
+			{noLogin ? (
+				<SignedOutBar style={styles.container} />
+			) : (
+				<SignedInBar style={styles.container} />
+			)}
 		</View>
 	);
 };
