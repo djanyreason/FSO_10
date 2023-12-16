@@ -24,13 +24,8 @@ const styles = StyleSheet.create({
 
 const AppBar = () => {
 	const checkLogin = useCheckLogin();
-	//const me = useQuery(CHECK_LOGIN);
-
-	//	console.log(me);
 
 	const noLogin = !checkLogin || !checkLogin.me;
-
-	console.log(noLogin);
 
 	return (
 		<View style={styles.container}>

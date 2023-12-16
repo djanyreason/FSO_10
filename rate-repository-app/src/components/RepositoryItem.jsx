@@ -1,7 +1,9 @@
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Pressable } from 'react-native';
+import { useNavigate } from 'react-router-native';
 
 import RepoItemStats from './RepoItemStats';
 import RepoItemHeader from './RepoItemHeader';
+import OpenRepoButton from './OpenRepoButton';
 
 const styles = StyleSheet.create({
 	RepoItem: {
@@ -12,12 +14,23 @@ const styles = StyleSheet.create({
 	},
 });
 
-const RepositoryItem = ({ repo }) => {
+const RepositoryItem = ({ repo, solo }) => {
+	const navigate = useNavigate();
+
+	const onPress = () => {
+		navigate(`/repo/${repo.id}`);
+	};
+
 	return (
-		<View testID='repositoryItem' style={styles.RepoItem}>
+		<Pressable
+			testID='repositoryItem'
+			style={styles.RepoItem}
+			onPress={onPress}
+		>
 			<RepoItemHeader repo={repo} />
 			<RepoItemStats repo={repo} />
-		</View>
+			{solo ? <OpenRepoButton url={repo.url} /> : null}
+		</Pressable>
 	);
 };
 
