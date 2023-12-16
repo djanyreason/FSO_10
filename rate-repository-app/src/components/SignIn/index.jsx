@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-native';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-import useSignIn from '../hooks/useSignIn';
-import Text from './Text';
-import FormikTextInput from './FormikTextInput';
-import theme from '../theme';
+import useSignIn from '../../hooks/useSignIn';
+import Text from '../Text';
+import FormikTextInput from '../Text/FormikTextInput';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
 	form: {
@@ -14,23 +14,23 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		alignItems: 'stretch',
 		backgroundColor: 'white',
-		padding: 15,
+		padding: theme.layout.buffer * 3,
 		paddingTop: 0,
 	},
 	input: {
-		marginTop: 15,
+		marginTop: theme.layout.buffer * 3,
 		borderWidth: 1,
 		borderColor: 'black',
-		borderRadius: 2,
-		padding: 7,
+		borderRadius: theme.layout.borderRadius,
+		padding: theme.layout.buffer,
 	},
 	button: {
-		marginTop: 15,
-		borderRadius: 2,
+		marginTop: theme.layout.buffer * 3,
+		borderRadius: theme.layout.borderRadius,
 		backgroundColor: theme.colors.primary,
 		display: 'flex',
 		alignItems: 'center',
-		padding: 9,
+		padding: theme.layout.buffer * 2,
 	},
 	text: {
 		color: 'white',

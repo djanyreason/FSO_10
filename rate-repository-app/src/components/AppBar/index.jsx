@@ -2,20 +2,18 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 
 import AppBarTab from './AppBarTab';
-import theme from '../theme';
-import { useQuery } from '@apollo/client';
-import { CHECK_LOGIN } from '../graphql/queries';
+import theme from '../../theme';
 
-import useCheckLogin from '../hooks/useCheckLogin';
+import useCheckLogin from '../../hooks/useCheckLogin';
 
 const styles = StyleSheet.create({
 	container: {
 		paddingTop: Constants.statusBarHeight,
 		backgroundColor: theme.colors.header,
-		paddingLeft: 10,
-		paddingRight: 10,
-		paddingBottom: 10,
-		marginTop: 10,
+		paddingLeft: theme.layout.buffer * 2,
+		paddingRight: theme.layout.buffer * 2,
+		paddingBottom: theme.layout.buffer * 2,
+		marginTop: theme.layout.buffer * 2,
 		display: 'flex',
 		flexDirection: 'row',
 	},

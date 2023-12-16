@@ -1,6 +1,7 @@
 import { View, StyleSheet, Image, Dimensions } from 'react-native';
 
 import RepoItemDetails from './RepoItemDetails';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
 	header: {
@@ -10,11 +11,11 @@ const styles = StyleSheet.create({
 	},
 	logo: {
 		flexGrow: 0,
-		width: 50,
-		height: 50,
-		margin: 10,
+		width: theme.layout.icon,
+		height: theme.layout.icon,
+		margin: theme.layout.buffer * 2,
 		marginTop: 0,
-		borderRadius: 5,
+		borderRadius: theme.layout.borderRadius,
 	},
 });
 

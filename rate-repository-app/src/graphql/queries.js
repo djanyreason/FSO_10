@@ -19,6 +19,20 @@ export const GET_ONE_REPO = gql`
 	query OneRepo($repositoryId: ID!) {
 		repository(id: $repositoryId) {
 			...RepoDetails
+			reviews {
+				edges {
+					node {
+						id
+						text
+						rating
+						createdAt
+						user {
+							id
+							username
+						}
+					}
+				}
+			}
 		}
 	}
 	${REPO_INFO}

@@ -1,6 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 
 import RepoItemStat from './RepoItemStat';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
 	stats: {
@@ -8,7 +9,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		justifyContent: 'space-evenly',
 		alignItems: 'center',
-		paddingTop: 5,
+		paddingTop: theme.layout.buffer,
 	},
 });
 

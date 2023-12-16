@@ -2,10 +2,10 @@ import { StyleSheet, View } from 'react-native';
 import { Route, Routes, Navigate } from 'react-router-native';
 
 import RepositoryList from './RepositoryList';
-import SingleRepoItem from './SingleRepoItem';
+import SingleRepoItem from './RepositoryList/SingleRepoItem';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
-import LogOut from './LogOut';
+import LogOut from './SignIn/LogOut';
 import theme from '../theme';
 
 const styles = StyleSheet.create({

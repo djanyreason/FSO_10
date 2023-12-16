@@ -4,11 +4,12 @@ import { useNavigate } from 'react-router-native';
 import RepoItemStats from './RepoItemStats';
 import RepoItemHeader from './RepoItemHeader';
 import OpenRepoButton from './OpenRepoButton';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
 	RepoItem: {
 		backgroundColor: 'white',
-		padding: 10,
+		padding: theme.layout.buffer * 2,
 		display: 'flex',
 		maxWidth: '100%',
 	},

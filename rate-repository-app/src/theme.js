@@ -24,6 +24,12 @@ const theme = {
 		normal: '400',
 		bold: '700',
 	},
+	layout: {
+		buffer: 5,
+		icon: 50,
+		borderRadius: 3,
+		textMargin: 3,
+	},
 };
 
 export default theme;

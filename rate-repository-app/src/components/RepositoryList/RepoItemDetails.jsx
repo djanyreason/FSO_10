@@ -1,7 +1,7 @@
 import { View, StyleSheet } from 'react-native';
 
-import Text from './Text';
-import theme from '../theme';
+import Text from '../Text';
+import theme from '../../theme';
 
 const styles = StyleSheet.create({
 	details: {
@@ -16,11 +16,11 @@ const styles = StyleSheet.create({
 		padding: 5,
 		paddingTop: 3,
 		paddingBottom: 4,
-		borderRadius: 5,
-		marginTop: 3,
+		borderRadius: 3,
+		marginTop: theme.layout.textMargin,
 	},
 	textSpacing: {
-		marginBottom: 3,
+		marginBottom: theme.layout.textMargin,
 	},
 });
 
