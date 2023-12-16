@@ -9,11 +9,14 @@ const styles = StyleSheet.create({
 	},
 });
 
+export const convertNum = (num) =>
+	num >= 1000
+		? Math.floor(num / 1000) + Math.round((num % 1000) / 100) / 10 + 'k'
+		: num;
+
 const RepoItemStat = ({ num, desc }) => {
-	const displayNum =
-		num >= 1000
-			? Math.floor(num / 1000) + Math.round((num % 1000) / 100) / 10 + 'k'
-			: num;
+	const displayNum = convertNum(num);
+
 	return (
 		<View style={styles.stat}>
 			<Text fontWeight={'bold'}>{displayNum}</Text>

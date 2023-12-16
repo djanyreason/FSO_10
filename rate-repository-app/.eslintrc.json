@@ -9,7 +9,8 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:react/jsx-runtime",
-		"plugin:react-hooks/recommended"
+		"plugin:react-hooks/recommended",
+		"plugin:jest/recommended"
 	],
 	"ignorePatterns": ["dist", ".eslintrc.cjs"],
 	"parser": "@babel/eslint-parser",
