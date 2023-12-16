@@ -7,7 +7,8 @@ const SignedOutBar = ({ style }) => {
 		<View style={style}>
 			<ScrollView horizontal>
 				<AppBarTab route={'/'}>Repositories</AppBarTab>
-				<AppBarTab route={'/signin'}>{'Sign In'}</AppBarTab>
+				<AppBarTab route={'/signin'}>Sign In</AppBarTab>
+				<AppBarTab route={'/newuser'}>Sign Up</AppBarTab>
 			</ScrollView>
 		</View>
 	);
