@@ -2,15 +2,31 @@ import { useQuery } from '@apollo/client';
 
 import { GET_ONE_REPO } from '../graphql/queries';
 
-const useSingleRepo = (repositoryId) => {
-	const repoQL = useQuery(GET_ONE_REPO, {
-		variables: { repositoryId },
+const useSingleRepo = (variables) => {
+	const { data, loading, fetchMore, ...result } = useQuery(GET_ONE_REPO, {
+		variables,
 		fetchPolicy: 'cache-and-network',
 	});
 
+	const handleFetchMore = () => {
+		const canFetchMore =
+			!loading && data?.repository.reviews.pageInfo.hasNextPage;
+
+		if (!canFetchMore) return;
+
+		fetchMore({
+			variables: {
+				after: data.repository.reviews.pageInfo.endCursor,
+				...variables,
+			},
+		});
+	};
+
 	return {
-		...repoQL,
-		repository: repoQL.loading ? null : repoQL.data.repository,
+		loading,
+		fetchMore: handleFetchMore,
+		repository: data?.repository,
+		...result,
 	};
 };
 

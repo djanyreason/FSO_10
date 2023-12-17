@@ -23,3 +23,11 @@ export const REVIEW_INFO = gql`
 		createdAt
 	}
 `;
+
+export const PAGE_INFO = gql`
+	fragment PageCursorInfo on PageInfo {
+		startCursor
+		endCursor
+		hasNextPage
+	}
+`;

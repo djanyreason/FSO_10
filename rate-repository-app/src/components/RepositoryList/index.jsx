@@ -27,7 +27,7 @@ export class RepositoryListContainer extends React.Component {
 	};
 
 	render() {
-		const { repositories } = this.props;
+		const { repositories, onEndReach } = this.props;
 
 		const repositoryNodes = repositories
 			? repositories.edges.map((edge) => edge.node)
@@ -38,6 +38,8 @@ export class RepositoryListContainer extends React.Component {
 				data={repositoryNodes}
 				ItemSeparatorComponent={ItemSeparator}
 				renderItem={({ item }) => <RepositoryItem repo={item} solo={false} />}
+				onEndReached={onEndReach}
+				onEndReachedThreshold={0.5}
 			/>
 		);
 	}
@@ -71,16 +73,22 @@ const RepositoryList = () => {
 		setFilter(newVal);
 	};
 
-	const { repositories } = useRepositories({
+	const { repositories, fetchMore } = useRepositories({
+		first: 8,
 		...variables,
 		searchKeyword: filter,
 	});
+
+	const onEndReach = () => {
+		fetchMore();
+	};
 
 	return (
 		<RepositoryListContainer
 			repositories={repositories}
 			updateVariables={updateVariables}
 			updateFilter={updateFilter}
+			onEndReach={onEndReach}
 		/>
 	);
 };

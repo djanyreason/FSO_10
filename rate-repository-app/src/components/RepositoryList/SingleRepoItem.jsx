@@ -16,11 +16,18 @@ const ItemSeparator = () => <View style={styles.separator} />;
 const SingleRepoItem = () => {
 	const { id } = useParams();
 
-	const { repository } = useSingleRepo(id);
+	const { repository, fetchMore } = useSingleRepo({
+		repositoryId: id,
+		first: 5,
+	});
 
 	if (!repository) return null;
 
 	const reviews = repository.reviews.edges.map((edge) => edge.node);
+
+	const onEndReach = () => {
+		fetchMore();
+	};
 
 	return (
 		<FlatList
@@ -34,6 +41,8 @@ const SingleRepoItem = () => {
 				</View>
 			}
 			ItemSeparatorComponent={ItemSeparator}
+			onEndReached={onEndReach}
+			onEndReachedThreshold={0.5}
 		/>
 	);
 };
