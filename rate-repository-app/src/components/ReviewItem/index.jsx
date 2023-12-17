@@ -14,12 +14,12 @@ const styles = StyleSheet.create({
 	},
 });
 
-const ReviewItem = ({ item }) => {
+const ReviewItem = ({ item, byUser }) => {
 	return (
 		<View style={styles.item}>
 			<Score rating={item.rating} />
 			<Details
-				username={item.user.username}
+				username={byUser ? item.repository.fullName : item.user.username}
 				date={item.createdAt}
 				review={item.text}
 			/>

@@ -5,6 +5,7 @@ import RepositoryList from './RepositoryList';
 import SingleRepoItem from './RepositoryList/SingleRepoItem';
 import NewReviewForm from './NewReviewForm';
 import NewUserForm from './NewUserForm';
+import UserReviews from './UserReviews';
 import AppBar from './AppBar';
 import SignIn from './SignIn';
 import LogOut from './SignIn/LogOut';
@@ -24,6 +25,7 @@ const Main = () => {
 			<AppBar />
 			<Routes>
 				<Route path='/repo/:id' element={<SingleRepoItem />} />
+				<Route path='/userreviews' element={<UserReviews />} />
 				<Route path='/newuser' element={<NewUserForm />} />
 				<Route path='/review' element={<NewReviewForm />} />
 				<Route path='/signin' element={<SignIn />} />
