@@ -16,15 +16,17 @@ const UserReviews = () => {
 	const me = useMyReviews();
 	const navigate = useNavigate();
 
-	if (!me || !me.me) return null;
-	if (!me.me) navigate('/');
+	if (!me) return null;
+	if (!me.data.me) navigate('/');
 
-	const reviews = me.me.reviews.edges.map((edge) => edge.node);
+	const reviews = me.data.me.reviews.edges.map((edge) => edge.node);
 
 	return (
 		<FlatList
 			data={reviews}
-			renderItem={({ item }) => <ReviewItem item={item} byUser={true} />}
+			renderItem={({ item }) => (
+				<ReviewItem item={item} byUser={true} refetch={me.refetch} />
+			)}
 			keyExtractor={({ id }) => id}
 			ItemSeparatorComponent={ItemSeparator}
 		/>

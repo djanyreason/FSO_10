@@ -56,6 +56,7 @@ export const CHECK_LOGIN = gql`
 						...ReviewInfo
 						repository {
 							fullName
+							url
 						}
 					}
 				}
